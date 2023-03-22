@@ -11,21 +11,12 @@ namespace tfg_tests
         //Environemtns json paths
         private static string _environmentsFilePath = Path.Combine(Environment.CurrentDirectory, "Config", "Data", "Environments", "AppConfig_Environments.json");
 
-        //private static string _devEnviroFilePath = Path.Combine(Environment.CurrentDirectory, "Config", "Data", "Environments", "AppConfig_DevelopmentEnviro.json");
-        //private static string _stagEnviroFilePath = Path.Combine(Environment.CurrentDirectory, "Config", "Data", "Environments", "AppConfig_StagingEnviro.json");
-        //private static string _prodEnviroFilePath = Path.Combine(Environment.CurrentDirectory, "Config", "Data", "Environments", "AppConfig_ProductionEnviro.json");
-        //private static string _noneEnviroFilePath = Path.Combine(Environment.CurrentDirectory, "Config", "Data", "Environments", "AppConfig_NoneEnviro.json");
-
         //all config files 
-        private static string[] _configFiles = new string[] { _appConfigFilePath, _environmentsFilePath /*, _devEnviroFilePath, _stagEnviroFilePath,_prodEnviroFilePath, _noneEnviroFilePath */};
+        private static string[] _configFiles = new string[] { _appConfigFilePath, _environmentsFilePath};
 
 
         static void Main(string[] args)
         {
-
-
-
-
 
             //create the config builder that will deserialize our json files
             ConfigurationBuilder configBuilder = new ConfigurationBuilder();
@@ -45,20 +36,6 @@ namespace tfg_tests
             Console.WriteLine(config);
 
 
-
-            // Comprobaciones para ver si el sistema que he montado de getters y setters funciona correctamente
-
-            //ConfigModel config = configRoot.Get<ConfigModel>();
-
-            //string currentUser = config.GeneralSettings.TestUser.ToString();
-            //string currentEnviorment = config.GeneralSettings.SelectedEnvironment.ToString();
-            //string EnvironmentAcces = config.ActualEnvironment.EnvironmentName;
-
-            //Console.WriteLine($" El Usuario es: {currentUser} y el SelectedEnvironment: {currentEnviorment} deberia ser igual a: {EnvironmentAcces}");
-
-
-            // Esto deberia dar nullo y efectivamente lo da
-            // string wrongEnviorment = config.StagingEnvironment.ToString();
         }
     }
 }
